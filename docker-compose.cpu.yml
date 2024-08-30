@@ -1,0 +1,16 @@
+version: "3"
+services:
+  ml:
+    container_name: actions-cicd_cpu_1
+    image: khulnasoft/ml-cicd
+    network_mode: "host"
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "7654:7654"
+    volumes:
+      - .:/data
+    environment:
+      - DASK_SCHEDULER
+    command: tail -f /dev/null

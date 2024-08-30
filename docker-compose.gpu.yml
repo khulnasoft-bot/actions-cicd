@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ml:
+    container_name: actions-cicd_gpu_1
+    image: khulnasoft/ml-cicd-gpu
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    network_mode: "host"
+    build:
+      context: .
+      dockerfile: docker/gpu.Dockerfile
+    volumes:
+      - .:/data
+    environment:
+      - DASK_SCHEDULER
+    command: tail -f /dev/null
