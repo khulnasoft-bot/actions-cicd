@@ -3,7 +3,7 @@ on: repository_dispatch
 
 jobs:
   process-repository-dispatch:
-    if: github.actor == 'pr-chatops[bot]' || github.actor == 'khulnasoft' || github.actor == 'hohsiangwu'
+    if: github.actor == 'khulnasoft-bot' || github.actor == 'khulnasoft' || github.actor == 'hohsiangwu'
     runs-on: ubuntu-latest
 
     steps:
