@@ -1,5 +1,6 @@
 name: Project Data to Pages
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
